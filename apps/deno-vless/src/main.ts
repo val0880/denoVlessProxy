@@ -203,4 +203,4 @@ const handler = async (req: Request): Promise<Response> => {
   return response;
 };
 
-serve(handler, { port: 8080, hostname: '0.0.0.0' });
+serve(handler, { port: Number(Deno.env.get('PORT') ?? 8080), hostname: '0.0.0.0' });
